@@ -21,7 +21,7 @@ public class UserManager {
 	}
   }
   public void LessonAdd (InstructorManager instructorManager) {
-	  System.out.println(instructorManager.getNewInstructorAdd() + "Ders eklendi.");
+	  System.out.println(instructorManager.getNewLessonAdd() + "Ders eklendi.");
   }
   
   public void InstructorAdd (InstructorManager instrucktorManager) {
