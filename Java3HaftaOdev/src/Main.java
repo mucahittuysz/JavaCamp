@@ -10,6 +10,9 @@ public class Main {
 	student1.setPassWord("*******");
 	student1.setEmail("xxxxxxxxxxxx@gmail.com");
 	
+	UserManager userManager = new UserManager();
+	userManager.Add(student1);
+	
 	
 	
 	
@@ -20,6 +23,10 @@ public class Main {
 	instructor1.setBirthDay("12/10/1983");
 	instructor1.setPassWord("*********");
 	instructor1.setEmail("engindemirog@gmail.com");
+	
+	UserManager instructorManager = new UserManager();
+	instructorManager.InstructorAdd(instructor1);
+	System.out.println();
 	
 	
 	

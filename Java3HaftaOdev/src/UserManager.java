@@ -13,7 +13,8 @@ public class UserManager {
   }
   
   public void Yoklama(StudentManager studentManager) {
-	if(studentManager.yoklamaKatilma == true)
+	
+	if(studentManager.getYoklamaKatilma() == true)
 	{
 		System.out.println("Yoklama alýndý, derse dönebilirsiz.");
 	}else {

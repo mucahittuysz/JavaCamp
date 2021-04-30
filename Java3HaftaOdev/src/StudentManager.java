@@ -21,7 +21,11 @@ public class StudentManager extends User{
 		this.odevTeslim = odevTeslim;
 	}
 
-	public boolean isYoklamaKatilma() {
+	public boolean getYoklamaKatilma() {
 		return yoklamaKatilma;
+	}
+	
+	public boolean setYoklamaKatilma() {
+		return yoklamaKatilma = true;
 	}
 }
