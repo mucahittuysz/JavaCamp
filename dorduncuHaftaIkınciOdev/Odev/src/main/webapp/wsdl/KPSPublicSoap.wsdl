@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://tckimlik.nvi.gov.tr/WS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tckimlik.nvi.gov.tr/WS">
+    
+  <wsdl:types>
+        
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tckimlik.nvi.gov.tr/WS">
+            
+      <s:element name="TCKimlikNoDogrula">
+                
+        <s:complexType>
+                    
+          <s:sequence>
+                        
+            <s:element maxOccurs="1" minOccurs="1" name="TCKimlikNo" type="s:long"/>
+                        
+            <s:element maxOccurs="1" minOccurs="0" name="Ad" type="s:string"/>
+                        
+            <s:element maxOccurs="1" minOccurs="0" name="Soyad" type="s:string"/>
+                        
+            <s:element maxOccurs="1" minOccurs="1" name="DogumYili" type="s:int"/>
+                      
+          </s:sequence>
+                  
+        </s:complexType>
+              
+      </s:element>
+            
+      <s:element name="TCKimlikNoDogrulaResponse">
+                
+        <s:complexType>
+                    
+          <s:sequence>
+                        
+            <s:element maxOccurs="1" minOccurs="1" name="TCKimlikNoDogrulaResult" type="s:boolean"/>
+                      
+          </s:sequence>
+                  
+        </s:complexType>
+              
+      </s:element>
+          
+    </s:schema>
+      
+  </wsdl:types>
+    
+  <wsdl:message name="TCKimlikNoDogrulaSoapIn">
+        
+    <wsdl:part element="tns:TCKimlikNoDogrula" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="TCKimlikNoDogrulaSoapOut">
+        
+    <wsdl:part element="tns:TCKimlikNoDogrulaResponse" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:portType name="KPSPublicSoap">
+        
+    <wsdl:operation name="TCKimlikNoDogrula">
+            
+      <wsdl:input message="tns:TCKimlikNoDogrulaSoapIn"/>
+            
+      <wsdl:output message="tns:TCKimlikNoDogrulaSoapOut"/>
+          
+    </wsdl:operation>
+      
+  </wsdl:portType>
+    
+  <wsdl:binding name="KPSPublicSoap" type="tns:KPSPublicSoap">
+        
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        
+    <wsdl:operation name="TCKimlikNoDogrula">
+            
+      <soap:operation soapAction="http://tckimlik.nvi.gov.tr/WS/TCKimlikNoDogrula" style="document"/>
+            
+      <wsdl:input>
+                
+        <soap:body use="literal"/>
+              
+      </wsdl:input>
+            
+      <wsdl:output>
+                
+        <soap:body use="literal"/>
+              
+      </wsdl:output>
+          
+    </wsdl:operation>
+      
+  </wsdl:binding>
+    
+  <wsdl:binding name="KPSPublicSoap12" type="tns:KPSPublicSoap">
+        
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        
+    <wsdl:operation name="TCKimlikNoDogrula">
+            
+      <soap12:operation soapAction="http://tckimlik.nvi.gov.tr/WS/TCKimlikNoDogrula" style="document"/>
+            
+      <wsdl:input>
+                
+        <soap12:body use="literal"/>
+              
+      </wsdl:input>
+            
+      <wsdl:output>
+                
+        <soap12:body use="literal"/>
+              
+      </wsdl:output>
+          
+    </wsdl:operation>
+      
+  </wsdl:binding>
+    
+  <wsdl:service name="KPSPublic">
+        
+    <wsdl:port binding="tns:KPSPublicSoap" name="KPSPublicSoap">
+            
+      <soap:address location="http://tempuri.org/Odev/services/KPSPublicSoap"/>
+          
+    </wsdl:port>
+        
+    <wsdl:port binding="tns:KPSPublicSoap12" name="KPSPublicSoap12">
+            
+      <soap12:address location="https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx"/>
+          
+    </wsdl:port>
+      
+  </wsdl:service>
+  
+</wsdl:definitions>
