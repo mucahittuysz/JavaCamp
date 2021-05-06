@@ -1,14 +1,17 @@
 package interfaceAbstractDemo;
 
-import tr.gov.nvi.tckimlik.WS.KPSPublic;
+import tr.gov.nvi.tckimlik.WS.KPSPublicSoapProxy;
 
 public class MernisServiceAdapter implements ICustomerCheckService {
 
 	@Override
 	public boolean CheckIfRealPerson(Customer customer) {
 	
-	KPSPublicSoapClient client = new KPSPublicSoapClient();
-	return client.TcKimlikDogrula(customer.nationalityId,customer.firstName.toUpperCase(),customer.lastName.toUpperCase(),customer.dateOfBirth.getYear());
+			KPSPublicSoapProxy kpsPublicSoapProxy = new KPSPublicSoapProxy();
+			return kpsPublicSoapProxy.TCKimlikNoDogrula(
+					Long.parseLong(customer.getNationalityId()),
+					customer.getFirstName().toUpperCase() ,
+					customer.getLastName().toUpperCase(),
+					customer.getDateOfBirth());
 	}
-
 }

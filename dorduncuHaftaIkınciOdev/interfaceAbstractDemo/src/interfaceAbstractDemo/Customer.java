@@ -1,33 +1,39 @@
 package interfaceAbstractDemo;
 
 import java.time.LocalDate;
-
 public class Customer {
-int id;
-String firstName;
-String lastName;
-LocalDate dateOfBirth;
-String nationalityId;
+// private int id;
+private String nationalityId;
+private String firstName;
+private String lastName;
+private LocalDate dateOfBirth;
 
 public Customer () {
 	
 }
 
-public Customer(int id, String firstName, String lastName, LocalDate dateOfBirth, String nationalityId) {
-
-	this.id = id;
-	this.firstName = firstName;
-	this.lastName = lastName;
+public Customer(/*int id,*/String nationalityId,String firstName, String lastName,  LocalDate dateOfBirth) {
+    super();
+   /* this.id = id; */
+    this.nationalityId = nationalityId;
+    this.firstName = firstName;
+	this.lastName = lastName;	
 	this.dateOfBirth = dateOfBirth;
-	this.nationalityId = nationalityId;
+	
 }
-
-public int getId() {
+/*public int getId() {
 	return id;
 }
 
 public void setId(int id) {
 	this.id = id;
+}*/
+public String getNationalityId() {
+	return nationalityId;
+}
+
+public void setNationalityId(String nationalityId) {
+	this.nationalityId = nationalityId;
 }
 
 public String getFirstName() {
@@ -52,14 +58,6 @@ public LocalDate getDateOfBirth() {
 
 public void setDateOfBirth(LocalDate dateOfBirth) {
 	this.dateOfBirth = dateOfBirth;
-}
-
-public String getNationalityId() {
-	return nationalityId;
-}
-
-public void setNationalityId(String nationalityId) {
-	this.nationalityId = nationalityId;
 }
 
 }

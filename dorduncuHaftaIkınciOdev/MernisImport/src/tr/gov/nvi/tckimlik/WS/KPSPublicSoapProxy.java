@@ -1,7 +1,5 @@
 package tr.gov.nvi.tckimlik.WS;
 
-import java.time.LocalDate;
-
 public class KPSPublicSoapProxy implements tr.gov.nvi.tckimlik.WS.KPSPublicSoap {
   private String _endpoint = null;
   private tr.gov.nvi.tckimlik.WS.KPSPublicSoap kPSPublicSoap = null;
@@ -51,11 +49,6 @@ public class KPSPublicSoapProxy implements tr.gov.nvi.tckimlik.WS.KPSPublicSoap 
       _initKPSPublicSoapProxy();
     return kPSPublicSoap.TCKimlikNoDogrula(TCKimlikNo, ad, soyad, dogumYili);
   }
-
-public boolean TCKimlikNoDogrula(long parseLong, String upperCase, String upperCase2, LocalDate dateOfBirth) {
-	// TODO Auto-generated method stub
-	return false;
-}
   
   
 }
